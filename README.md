@@ -8,6 +8,14 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 
 ## Available servers
 
+### Terraform MCP Server
+
+The [Terraform MCP Server](https://github.com/hashicorp/terraform-mcp-server) provides seamless integration with Terraform ecosystem, enabling advanced automation and interaction capabilities for Infrastructure as Code (IaC) development. The use cases include
+
+- Automating Terraform provider, policy and module discovery
+- Extracting detailed information about provider resources, data sources, user guides and functions
+- Exploring and utilizing Terraform modules
+
 ### IBM API Connect for GraphQL
 
 Any GraphQL endpoint server by API Connect for GraphQL SaaS also supports an MCP stateless HTTP server supporting `tools/list` and `tools/call`.
