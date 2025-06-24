@@ -23,6 +23,10 @@ A *GraphQL tool* is a subset of the schema that the LLM generates a valid GraphQ
 
 - [Link](https://github.ibm.com/Luke-Harrison1/mcp-w3-oauth)
 
+### ContextForge MCP Gateway
+
+- [ContextForge MCP Gateway](https://github.com/IBM/mcp-context-forge) is an MCP server, feature-rich gateway, and proxy that federates MCP and REST services-delivering unified discovery, authentication, rate-limiting, observability, multi-transport protocols, and an optional HTMX-powered admin UI through a single endpoint; It lets you create **Virtual MCP Servers** combining tools and resources across multiple servers, and it can be installed via PyPI (`pip install mcp-contextforge-gateway`) or deployed as a cli, API or UI as a container - and scales horizontally across Kubernetes clusters with Redis-backed federation and caching.
+
 ## 💬 Community
 
 Participate in the [Discord community](https://discord.com/invite/NzCQQWm7Xs).
