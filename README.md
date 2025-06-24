@@ -14,7 +14,7 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 
 ### ContextForge MCP Gateway
 
-- [ContextForge MCP Gateway](https://github.com/IBM/mcp-context-forge) is an MCP server, feature-rich gateway, and proxy that federates MCP and REST services-delivering unified discovery, authentication, rate-limiting, observability, multi-transport protocols, and an optional HTMX-powered admin UI through a single endpoint; It lets you create **Virtual MCP Servers** combining tools and resources across multiple servers, and it can be installed via PyPI (`pip install mcp-contextforge-gateway`) or deployed as a container - and scales horizontally across Kubernetes clusters with Redis-backed federation and caching.
+- [ContextForge MCP Gateway](https://github.com/IBM/mcp-context-forge) is an MCP server, feature-rich gateway, and proxy that federates MCP and REST services-delivering unified discovery, authentication, rate-limiting, observability, multi-transport protocols, and an optional HTMX-powered admin UI through a single endpoint; It lets you create **Virtual MCP Servers** combining tools and resources across multiple servers, and it can be installed via PyPI (`pip install mcp-contextforge-gateway`) or deployed as a cli, API or UI as a container - and scales horizontally across Kubernetes clusters with Redis-backed federation and caching.
 
 ## 💬 Community
 
