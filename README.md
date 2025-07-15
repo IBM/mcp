@@ -13,6 +13,7 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 - [IBM API Connect for GraphQL](https://www.ibm.com/docs/en/api-connect-graphql/saas?topic=directives-directive-tool) - Turn any GraphQL schema into a MCP server incl. authentication.
 - [IBM Cloud MCP Server](https://ibm-cloud.github.io/mcp/) - Enhance your LLM with tools from IBM Cloud.
 - [IBM Storage Insights MCP Server](https://github.com/IBM/ibm-storageinsights-mcpserver) - Leverage key IBM Storage Insights monitoring capabilities via an MCP interface.
+- [IBM watsonx.data Document Retrieval MCP Server](https://github.com/IBM/ibm-watsonxdata-dl-retrieval-mcp-server) - Query document libraries from watsonx.data using conversational language and receive human-readable responses.
 
 #### Hashicorp
 
