@@ -8,28 +8,17 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 
 ## Available servers
 
-### Terraform MCP Server
+#### IBM
 
-The [Terraform MCP Server](https://github.com/hashicorp/terraform-mcp-server) provides seamless integration with Terraform ecosystem, enabling advanced automation and interaction capabilities for Infrastructure as Code (IaC) development. The use cases include:
+- [IBM API Connect for GraphQL](https://www.ibm.com/docs/en/api-connect-graphql/saas?topic=directives-directive-tool) - Turn any GraphQL schema into a MCP server incl. authentication.
 
-- Automating Terraform provider, policy and module discovery
-- Extracting detailed information about provider resources, data sources, user guides and functions
-- Exploring and utilizing Terraform modules
+#### Hashicorp
 
-### IBM API Connect for GraphQL
+- [Terraform MCP Server](https://github.com/hashicorp/terraform-mcp-server) - Provides seamless integration with Terraform ecosystem, enabling advanced automation and interaction capabilities for Infrastructure as Code (IaC) development. 
 
-Any GraphQL endpoint server by API Connect for GraphQL SaaS also supports an MCP stateless HTTP server supporting `tools/list` and `tools/call`.
+#### 🛠️ Developer Tools
 
-Tools can be defined within a GraphQL schema using [`@tool` directive](https://www.ibm.com/docs/en/api-connect-graphql/saas?topic=directives-directive-tool).
-
-A *GraphQL tool* is a subset of the schema that the LLM generates a valid GraphQL request against:
-
- - [`tools/list`](https://www.ibm.com/docs/en/api-connect-graphql/saas?topic=directives-directive-tool#accessing-tool-descriptions__title__1)
- - [`tools/call`](https://www.ibm.com/docs/en/api-connect-graphql/saas?topic=directives-directive-tool#making-tool-calls__title__1)
-
-### ContextForge MCP Gateway
-
-[ContextForge MCP Gateway](https://github.com/IBM/mcp-context-forge) is an MCP server, feature-rich gateway, and proxy that federates MCP and REST services-delivering unified discovery, authentication, rate-limiting, observability, multi-transport protocols, and an optional HTMX-powered admin UI through a single endpoint; It lets you create **Virtual MCP Servers** combining tools and resources across multiple servers, and it can be installed via PyPI (`pip install mcp-contextforge-gateway`) or deployed as a cli, API or UI as a container - and scales horizontally across Kubernetes clusters with Redis-backed federation and caching.
+- [ContextForge MCP Gateway](https://github.com/IBM/mcp-context-forge) - MCP server, feature-rich gateway, and proxy that federates MCP and REST services-delivering unified discovery, authentication, rate-limiting, observability, multi-transport protocols, and an optional HTMX-powered admin UI through a single endpoint.
 
 ## 💬 Community
 
