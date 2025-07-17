@@ -17,7 +17,6 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 - [IBM Cloud VPC MCP Server](https://github.com/greyhoundforty/ibmcloud-vpc-mcp) - Provides access to IBM Cloud VPC resources and security analysis capabilities, enabling AI agents to interact with cloud infrastructure, backups, and security policies. 
 - [IBM Cloud Code Engine MCP Server](https://github.com/greyhoundforty/code-engine-mcp) - This MCP server provides tools to list and inspect Code Engine projects, applications, revisions, domain mappings, and secrets. 
 
-
 #### Hashicorp
 
 - [Terraform MCP Server](https://github.com/hashicorp/terraform-mcp-server) - Provides seamless integration with Terraform ecosystem, enabling advanced automation and interaction capabilities for Infrastructure as Code (IaC) development. 
