@@ -16,7 +16,7 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 - [IBM watsonx.data Document Retrieval MCP Server](https://github.com/IBM/ibm-watsonxdata-dl-retrieval-mcp-server) - Query document libraries from watsonx.data using conversational language and receive human-readable responses.
 - [IBM Cloud VPC MCP Server](https://github.com/greyhoundforty/code-engine-mcp) - Provides access to IBM Cloud VPC resources and security analysis capabilities, enabling AI agents to interact with cloud infrastructure, backups, and security policies. 
 - [IBM Cloud Code Engine MCP Server](https://github.com/greyhoundforty/code-engine-mcp) - This MCP server provides tools to list and inspect Code Engine projects, applications, revisions, domain mappings, and secrets. 
-- [IBM Cloud Docs MCP Server](https://github.com/sankalpmukim/ibm-cloud-docs-mcp-server) - This MCP server wraps the IBM Cloud Official Documentation, and provides the simple tools - `search_documentation` and `read_documentation`
+- [IBM Cloud Docs MCP Server](https://github.com/sankalpmukim/ibm-cloud-docs-mcp-server) - This MCP server wraps the IBM Cloud Official Documentation, and provides the tools to search and read documentation.
 
 #### Hashicorp
 
