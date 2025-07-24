@@ -1,0 +1,350 @@
+[tools]
+python = "3.12"
+usage = "latest"
+node = "lts"
+
+[env]
+_.python.venv = { path = ".venv", create = true }
+PROJECT_NAME = "{{ config_root | basename }}"
+PREFIX = "{{ env.PROJECT_NAME }}"
+
+[tasks."uv:reqs"]
+description = "Install dependencies from requirements file"
+alias = "uvr"
+run = "uv pip install -r requirements.txt"
+
+[tasks."uv:freeze"]
+description = "Create requirements.txt from currently installed modules"
+alias = "uvf"
+run = "uv pip freeze > requirements.txt"
+
+[tasks."uv:install"]
+description = "Install pip packages"
+alias = "uvi"
+run = "uv pip install"
+
+[tasks.info]
+description = "Print project information"
+run = '''
+echo "Project: $PROJECT_NAME"
+echo "Virtual Environment: $VIRTUAL_ENV"
+'''
+
+# Docker Tasks
+[tasks."docker:build"]
+description = "Build Docker image for MCP server"
+alias = "db"
+run = '''
+echo "🔨 Building Docker image: $DOCKER_IMAGE:$DOCKER_TAG"
+docker build -t $DOCKER_IMAGE:$DOCKER_TAG .
+echo "✅ Docker image built successfully"
+'''
+
+[tasks."docker:run"]
+description = "Run MCP server in Docker container"
+alias = "dr"
+run = '''
+echo "🚀 Starting MCP server container: $CONTAINER_NAME"
+if [ -z "$IBMCLOUD_API_KEY" ]; then
+  echo "❌ ERROR: IBMCLOUD_API_KEY environment variable not set"
+  echo "Please set it with: export IBMCLOUD_API_KEY='your-api-key'"
+  exit 1
+fi
+
+# Stop existing container if running
+docker stop $CONTAINER_NAME 2>/dev/null || true
+docker rm $CONTAINER_NAME 2>/dev/null || true
+
+# Run new container
+docker run -d \
+  --name $CONTAINER_NAME \
+  -e IBMCLOUD_API_KEY="$IBMCLOUD_API_KEY" \
+  -e PYTHONUNBUFFERED=1 \
+  -e LOG_LEVEL=INFO \
+  --restart unless-stopped \
+  $DOCKER_IMAGE:$DOCKER_TAG
+
+echo "✅ Container started successfully"
+echo "📋 Check status: docker ps"
+echo "📝 View logs: docker logs $CONTAINER_NAME"
+'''
+
+[tasks."docker:dev"]
+description = "Run MCP server in development mode with volume mounting"
+alias = "dd"
+run = '''
+echo "🛠️  Starting MCP server in development mode"
+if [ -z "$IBMCLOUD_API_KEY" ]; then
+  echo "❌ ERROR: IBMCLOUD_API_KEY environment variable not set"
+  exit 1
+fi
+
+# Stop existing dev container
+docker stop ${CONTAINER_NAME}-dev 2>/dev/null || true
+docker rm ${CONTAINER_NAME}-dev 2>/dev/null || true
+
+# Run with volume mounts for development
+docker run -it --rm \
+  --name ${CONTAINER_NAME}-dev \
+  -e IBMCLOUD_API_KEY="$IBMCLOUD_API_KEY" \
+  -e PYTHONUNBUFFERED=1 \
+  -e LOG_LEVEL=DEBUG \
+  -v "$(pwd)/vpc_mcp_server.py:/app/vpc_mcp_server.py" \
+  -v "$(pwd)/utils.py:/app/utils.py" \
+  $DOCKER_IMAGE:$DOCKER_TAG
+'''
+
+[tasks."docker:stop"]
+description = "Stop MCP server container"
+alias = "ds"
+run = '''
+echo "🛑 Stopping MCP server container"
+docker stop $CONTAINER_NAME 2>/dev/null || echo "Container not running"
+docker rm $CONTAINER_NAME 2>/dev/null || echo "Container already removed"
+echo "✅ Container stopped"
+'''
+
+[tasks."docker:logs"]
+description = "Show container logs"
+alias = "dl"
+run = '''
+echo "📝 Container logs for $CONTAINER_NAME:"
+docker logs -f $CONTAINER_NAME
+'''
+
+[tasks."docker:shell"]
+description = "Open shell in running container"
+alias = "dsh"
+run = '''
+echo "🐚 Opening shell in container: $CONTAINER_NAME"
+docker exec -it $CONTAINER_NAME /bin/bash
+'''
+
+[tasks."docker:clean"]
+description = "Clean up Docker resources"
+alias = "dc"
+run = '''
+echo "🧹 Cleaning up Docker resources"
+docker stop $CONTAINER_NAME 2>/dev/null || true
+docker rm $CONTAINER_NAME 2>/dev/null || true
+docker stop ${CONTAINER_NAME}-dev 2>/dev/null || true
+docker rm ${CONTAINER_NAME}-dev 2>/dev/null || true
+echo "🗑️  Removing unused images and containers"
+docker system prune -f
+echo "✅ Cleanup complete"
+'''
+
+[tasks."docker:rebuild"]
+description = "Clean rebuild of Docker image"
+alias = "drb"
+depends = ["docker:clean", "docker:build"]
+run = '''
+echo "🔄 Clean rebuild complete"
+'''
+
+[tasks."docker:compose:up"]
+description = "Start services with docker-compose"
+alias = "dcu"
+run = '''
+echo "🚀 Starting services with docker-compose"
+if [ -z "$IBMCLOUD_API_KEY" ]; then
+  echo "❌ ERROR: IBMCLOUD_API_KEY environment variable not set"
+  exit 1
+fi
+docker-compose up -d
+echo "✅ Services started"
+'''
+
+[tasks."docker:compose:down"]
+description = "Stop services with docker-compose"
+alias = "dcd"
+run = '''
+echo "🛑 Stopping docker-compose services"
+docker-compose down
+echo "✅ Services stopped"
+'''
+
+[tasks."docker:test"]
+description = "Test MCP server container"
+alias = "dt"
+run = '''
+echo "🧪 Testing MCP server container"
+if [ -z "$IBMCLOUD_API_KEY" ]; then
+  echo "❌ ERROR: IBMCLOUD_API_KEY environment variable not set"
+  exit 1
+fi
+
+# Test basic container functionality
+echo "Testing container startup..."
+docker run --rm \
+  -e IBMCLOUD_API_KEY="$IBMCLOUD_API_KEY" \
+  $DOCKER_IMAGE:$DOCKER_TAG \
+  python -c "
+import utils
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
+import os
+
+api_key = os.environ.get('IBMCLOUD_API_KEY')
+if api_key:
+    auth = IAMAuthenticator(apikey=api_key)
+    manager = utils.VPCManager(auth)
+    print('✅ VPCManager initialized successfully')
+    print('✅ Container test passed')
+else:
+    print('❌ API key not found')
+    exit(1)
+"
+'''
+
+# Security Analysis Tasks
+[tasks."security:check-ssh"]
+description = "Check for SSH exposure across all regions"
+alias = "ssh"
+run = '''
+echo "🔒 Checking for SSH exposure to internet"
+if [ -z "$IBMCLOUD_API_KEY" ]; then
+  echo "❌ ERROR: IBMCLOUD_API_KEY environment variable not set"
+  exit 1
+fi
+
+python3 << 'EOF'
+import asyncio
+import os
+from utils import VPCManager
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
+
+async def check_ssh():
+    api_key = os.environ.get('IBMCLOUD_API_KEY')
+    auth = IAMAuthenticator(apikey=api_key)
+    manager = VPCManager(auth)
+    
+    # Check common regions
+    regions = ['us-south', 'us-east', 'eu-gb', 'eu-de', 'jp-tok']
+    
+    for region in regions:
+        try:
+            print(f"\n🔍 Checking {region}...")
+            result = await manager.analyze_ssh_security_groups(region)
+            
+            if result['count'] > 0:
+                print(f"⚠️  Found {result['count']} security groups with SSH exposure:")
+                for sg in result['risky_security_groups']:
+                    print(f"  - {sg['security_group_name']} (VPC: {sg['vpc']['name']})")
+            else:
+                print(f"✅ No SSH exposure found in {region}")
+                
+        except Exception as e:
+            print(f"❌ Error checking {region}: {e}")
+
+if __name__ == "__main__":
+    asyncio.run(check_ssh())
+EOF
+'''
+
+[tasks."security:check-rdp"]
+description = "Check for RDP exposure across all regions"
+alias = "rdp"
+run = '''
+echo "🔒 Checking for RDP exposure to internet"
+if [ -z "$IBMCLOUD_API_KEY" ]; then
+  echo "❌ ERROR: IBMCLOUD_API_KEY environment variable not set"
+  exit 1
+fi
+
+python3 << 'EOF'
+import asyncio
+import os
+from utils import VPCManager
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
+
+async def check_rdp():
+    api_key = os.environ.get('IBMCLOUD_API_KEY')
+    auth = IAMAuthenticator(apikey=api_key)
+    manager = VPCManager(auth)
+    
+    regions = ['us-south', 'us-east', 'eu-gb', 'eu-de', 'jp-tok']
+    
+    for region in regions:
+        try:
+            print(f"\n🔍 Checking {region} for RDP (port 3389)...")
+            result = await manager.analyze_security_groups_by_protocol(
+                region, 'tcp', 3389, '0.0.0.0/0'
+            )
+            
+            if result['count'] > 0:
+                print(f"⚠️  Found {result['count']} security groups with RDP exposure:")
+                for sg in result['matching_security_groups']:
+                    print(f"  - {sg['security_group_name']} (VPC: {sg['vpc']['name']})")
+            else:
+                print(f"✅ No RDP exposure found in {region}")
+                
+        except Exception as e:
+            print(f"❌ Error checking {region}: {e}")
+
+if __name__ == "__main__":
+    asyncio.run(check_rdp())
+EOF
+'''
+
+# Development Tasks
+[tasks.dev]
+description = "Start development environment"
+run = '''
+echo "🛠️  Starting development environment"
+echo "1. Virtual environment: $(python --version)"
+echo "2. Installing dependencies..."
+mise run uv:reqs
+echo "3. Environment ready!"
+echo ""
+echo "Available commands:"
+echo "  - mise run docker:build   # Build Docker image"
+echo "  - mise run docker:dev     # Run in dev mode"
+echo "  - mise run security:check-ssh # Check SSH exposure"
+echo "  - python vpc_mcp_server.py    # Run locally"
+'''
+
+[tasks.clean]
+description = "Clean up all resources"
+depends = ["docker:clean"]
+run = '''
+echo "🧹 Cleaning development environment"
+rm -rf .venv __pycache__ *.pyc
+echo "✅ Development environment cleaned"
+'''
+
+# Help task
+[tasks.help]
+description = "Show available tasks"
+alias = "h"
+run = '''
+echo "📚 Available tasks:"
+echo ""
+echo "🐳 Docker:"
+echo "  docker:build    (db)  - Build Docker image"
+echo "  docker:run      (dr)  - Run container"
+echo "  docker:dev      (dd)  - Run in dev mode"
+echo "  docker:stop     (ds)  - Stop container"
+echo "  docker:logs     (dl)  - Show logs"
+echo "  docker:shell    (dsh) - Open shell"
+echo "  docker:clean    (dc)  - Clean up"
+echo "  docker:test     (dt)  - Test container"
+echo ""
+echo "🔒 Security:"
+echo "  security:check-ssh (ssh) - Check SSH exposure"
+echo "  security:check-rdp (rdp) - Check RDP exposure"
+echo ""
+echo "📦 Dependencies:"
+echo "  uv:reqs    (uvr) - Install requirements"
+echo "  uv:freeze  (uvf) - Freeze requirements"
+echo "  uv:install (uvi) - Install packages"
+echo ""
+echo "🛠️  Development:"
+echo "  dev   - Setup dev environment"
+echo "  clean - Clean all resources"
+echo "  info  - Show project info"
+echo ""
+echo "💡 Examples:"
+echo "  mise run db && mise run dr  # Build and run"
+echo "  mise run ssh                # Check SSH security"
+echo "  IBMCLOUD_API_KEY=xxx mise run dt  # Test with API key"
+'''

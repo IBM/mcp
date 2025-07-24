@@ -1,0 +1,27 @@
+services:
+  vpc-mcp-server:
+    build: .
+    image: ibm-vpc-mcp:latest
+    container_name: vpc-mcp-server
+    environment:
+      - IBMCLOUD_API_KEY=${IBMCLOUD_API_KEY}
+      - PYTHONUNBUFFERED=1
+      - LOG_LEVEL=INFO
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    # MCP servers communicate via stdio, so no ports needed
+    # The host application will communicate with the container via docker exec or similar
+
+  # Optional: Add a test client service
+  vpc-mcp-test:
+    build: .
+    image: ibm-vpc-mcp:latest
+    container_name: vpc-mcp-test
+    environment:
+      - IBMCLOUD_API_KEY=${IBMCLOUD_API_KEY}
+    command: python -c "print('MCP Server Test Container Ready')"
+    depends_on:
+      - vpc-mcp-server
+    profiles:
+      - test
