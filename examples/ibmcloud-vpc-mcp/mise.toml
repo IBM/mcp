@@ -1,0 +1,112 @@
+[env]
+DOCKER_IMAGE = "ibmcloud-vpc-mcp"
+
+[tasks]
+
+# Build Docker container with custom tag (prompts for tag)
+"docker:build" = """
+#!/bin/bash
+CONTAINER_NAME="${DOCKER_IMAGE:-ibmcloud-vpc-mcp}"
+
+# Prompt for tag
+echo "Enter Docker tag (e.g., v1.0.0, latest, dev): "
+read -r TAG
+
+if [ -z "$TAG" ]; then
+    echo "No tag provided. Using timestamp..."
+    TAG=$(date +%Y%m%d-%H%M%S)
+fi
+
+FULL_TAG="${CONTAINER_NAME}:${TAG}"
+
+echo "Building container with tag: ${FULL_TAG}"
+docker build -t "${FULL_TAG}" .
+
+# Also tag as latest for convenience  
+docker tag "${FULL_TAG}" "${CONTAINER_NAME}:latest"
+
+echo "Container built successfully:"
+echo "  - ${FULL_TAG}"
+echo "  - ${CONTAINER_NAME}:latest"
+echo ""
+echo "To update Claude Desktop config, run:"
+echo "  sed -i '' 's|${CONTAINER_NAME}:[^\"]*|${FULL_TAG}|g' ~/.config/claude-desktop/claude_desktop_config.json"
+"""
+
+# Build Docker container with timestamp tag for easier versioning
+build-container = """
+#!/bin/bash
+TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+CONTAINER_NAME="${DOCKER_IMAGE:-ibmcloud-vpc-mcp}"
+TAG="${CONTAINER_NAME}:${TIMESTAMP}"
+
+echo "Building container with tag: ${TAG}"
+docker build -t "${TAG}" .
+
+# Also tag as latest for convenience
+docker tag "${TAG}" "${CONTAINER_NAME}:latest"
+
+echo "Container built successfully:"
+echo "  - ${TAG}"
+echo "  - ${CONTAINER_NAME}:latest"
+echo ""
+echo "To update Claude Desktop config, run:"
+echo "  sed -i '' 's|${CONTAINER_NAME}:[0-9]*-[0-9]*|${TAG}|g' ~/.config/claude-desktop/claude_desktop_config.json"
+"""
+
+# Build and update Claude Desktop config in one command
+build-and-update = """
+#!/bin/bash
+TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+CONTAINER_NAME="${DOCKER_IMAGE:-ibmcloud-vpc-mcp}"
+TAG="${CONTAINER_NAME}:${TIMESTAMP}"
+CONFIG_FILE="$HOME/.config/claude-desktop/claude_desktop_config.json"
+
+echo "Building container with tag: ${TAG}"
+docker build -t "${TAG}" .
+
+# Also tag as latest for convenience
+docker tag "${TAG}" "${CONTAINER_NAME}:latest"
+
+echo "Container built successfully: ${TAG}"
+
+# Update Claude Desktop config if it exists
+if [ -f "$CONFIG_FILE" ]; then
+    echo "Updating Claude Desktop config..."
+    sed -i '' "s|${CONTAINER_NAME}:[0-9]*-[0-9]*|${TAG}|g" "$CONFIG_FILE"
+    echo "Config updated with new tag: ${TAG}"
+else
+    echo "Claude Desktop config not found at: $CONFIG_FILE"
+fi
+
+echo ""
+echo "Container ready: ${TAG}"
+"""
+
+# Quick rebuild without updating config
+rebuild = """
+#!/bin/bash
+TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+CONTAINER_NAME="${DOCKER_IMAGE:-ibmcloud-vpc-mcp}"
+TAG="${CONTAINER_NAME}:${TIMESTAMP}"
+
+docker build -t "${TAG}" .
+docker tag "${TAG}" "${CONTAINER_NAME}:latest"
+echo "Rebuilt: ${TAG}"
+"""
+
+# Test the container with the new timestamp tag
+test-container = """
+#!/bin/bash
+CONTAINER_NAME="${DOCKER_IMAGE:-ibmcloud-vpc-mcp}"
+# Get the most recent timestamp tag
+LATEST_TAG=$(docker images --format "table {{.Repository}}:{{.Tag}}" | grep "${CONTAINER_NAME}:" | grep -E '[0-9]{8}-[0-9]{6}' | head -1)
+
+if [ -z "$LATEST_TAG" ]; then
+    echo "No timestamped container found. Run 'mise run build-container' first."
+    exit 1
+fi
+
+echo "Testing container: ${LATEST_TAG}"
+docker run --rm -e IBMCLOUD_API_KEY="$IBMCLOUD_API_KEY" "${LATEST_TAG}" python test_mcp_client.py
+"""
