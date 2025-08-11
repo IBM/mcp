@@ -14,7 +14,8 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 - [IBM Cloud MCP Server](https://ibm-cloud.github.io/mcp/) - Enhance your LLM with tools from IBM Cloud.
 - [IBM Cloud Code Engine MCP Server](https://github.com/greyhoundforty/code-engine-mcp) - This MCP server provides tools to list and inspect Code Engine projects, applications, revisions, domain mappings, and secrets. 
 - [IBM Cloud Docs MCP Server](https://github.com/sankalpmukim/ibm-cloud-docs-mcp-server) - This MCP server wraps the IBM Cloud Official Documentation, and provides the tools to search and read documentation.
-- [IBM Cloud VPC MCP Server](https://github.com/greyhoundforty/ibmcloud-vpc-mcp) - Provides access to IBM Cloud VPC resources and security analysis capabilities, enabling AI agents to interact with cloud infrastructure, backups, and security policies. 
+- [IBM Cloud VPC MCP Server](https://github.com/greyhoundforty/ibmcloud-vpc-mcp) - Provides access to IBM Cloud VPC resources and security analysis capabilities, enabling AI agents to interact with cloud infrastructure, backups, and security policies.
+- [IBM Decision Server Runtime MCP Server](https://github.com/DecisionsDev/decision-mcp-server) - An MCP Server enabling integration with IBM Decision Server Runtime to retrieve and invoke decision services.
 - [IBM Instana MCP Server](https://github.com/instana/mcp-instana) - This MCP server provides tools to list and inspect IBM Instana resources, including applications, infrastructure resources etc.
 - [IBM MQ Server](https://github.com/ibm-messaging/mq-mcp-server) -  Provides access to IBM MQ queue managers health checks, and to run any MQSC command against a specific queue manager.
 - [IBM Storage Insights MCP Server](https://github.com/IBM/ibm-storageinsights-mcpserver) - Leverage key IBM Storage Insights monitoring capabilities via an MCP interface.
