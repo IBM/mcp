@@ -28,7 +28,12 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 
 - [ContextForge MCP Gateway](https://github.com/IBM/mcp-context-forge) - MCP server, feature-rich gateway, and proxy that federates MCP and REST services-delivering unified discovery, authentication, rate-limiting, observability, multi-transport protocols, and an optional HTMX-powered admin UI through a single endpoint.
 - [IBM API Connect for GraphQL](https://www.ibm.com/docs/en/api-connect-graphql/saas?topic=directives-directive-tool) - Turn any GraphQL schema into a MCP server incl. authentication.
+- [Langflow](https://github.com/langflow-ai/langflow) - Langflow is an open-source visual builder that lets developers rapidly prototype and build AI applications, it integrates with the Model Context Protocol (MCP) as both an MCP server and an MCP client.
 - [WxMCPServer](https://github.com/IBM/WxMCPServer) - IBM webMethods Hybrid Integration (IWHI) based MCP server, that enables existing APIs to be used as MCP tools.
+
+## MCP Clients
+
+
 
 ## 💬 Community
 
