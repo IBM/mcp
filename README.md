@@ -22,7 +22,8 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 
 #### Hashicorp
 
-- [Terraform MCP Server](https://github.com/hashicorp/terraform-mcp-server) - Provides seamless integration with Terraform ecosystem, enabling advanced automation and interaction capabilities for Infrastructure as Code (IaC) development. 
+- [Terraform MCP Server](https://github.com/hashicorp/terraform-mcp-server) - Provides seamless integration with Terraform ecosystem, enabling advanced automation and interaction capabilities for Infrastructure as Code (IaC) development.
+- [Vault Radar MCP Server](https://developer.hashicorp.com/hcp/docs/vault-radar/mcp-server/overview) - Provides access to HCP Vault Radar data sources, secret risks, and events, enabling LLMs to query and analyze security information using natural language.
 
 #### 🛠️ Developer Tools
 
