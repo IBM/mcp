@@ -26,11 +26,11 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 
 #### 🛠️ Developer Tools
 
+- [BeeAI Framework](https://framework.beeai.dev/integrations/mcp) - BeeAI Framework is an open-source framework for building production-grade multi-agent systems, supporting both Python and TypeScript. It integrates with the Model Context Protocol (MCP) as a MCP client, and is hosted by the Linux Foundation under open governance.
 - [ContextForge MCP Gateway](https://github.com/IBM/mcp-context-forge) - MCP server, feature-rich gateway, and proxy that federates MCP and REST services-delivering unified discovery, authentication, rate-limiting, observability, multi-transport protocols, and an optional HTMX-powered admin UI through a single endpoint.
 - [IBM API Connect for GraphQL](https://www.ibm.com/docs/en/api-connect-graphql/saas?topic=directives-directive-tool) - Turn any GraphQL schema into a MCP server incl. authentication.
 - [Langflow](https://github.com/langflow-ai/langflow) - Langflow is an open-source visual builder that lets developers rapidly prototype and build AI applications, it integrates with the Model Context Protocol (MCP) as both an MCP server and an MCP client.
 - [WxMCPServer](https://github.com/IBM/WxMCPServer) - IBM webMethods Hybrid Integration (IWHI) based MCP server, that enables existing APIs to be used as MCP tools.
-- [BeeAI Framework](https://framework.beeai.dev/integrations/mcp) - BeeAI Framework is an open-source framework for building production-grade multi-agent systems. It is hosted by the Linux Foundation under open governance, ensuring transparency, community-driven development, and enterprise-grade stability. BeeAI Framework provides the flexibility and performance needed for scalable AI systems, supporting both Python and TypeScript.
 
 ## MCP Clients
 
