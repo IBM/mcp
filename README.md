@@ -20,9 +20,10 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 - [IBM Storage Insights MCP Server](https://github.com/IBM/ibm-storageinsights-mcpserver) - Leverage key IBM Storage Insights monitoring capabilities via an MCP interface.
 - [IBM watsonx.data Document Retrieval MCP Server](https://github.com/IBM/ibm-watsonxdata-dl-retrieval-mcp-server) - Query document libraries from watsonx.data using conversational language and receive human-readable responses.
 
-#### Hashicorp
+#### HashiCorp
 
-- [Terraform MCP Server](https://github.com/hashicorp/terraform-mcp-server) - Provides seamless integration with Terraform ecosystem, enabling advanced automation and interaction capabilities for Infrastructure as Code (IaC) development. 
+- [Terraform MCP Server](https://github.com/hashicorp/terraform-mcp-server) - Provides seamless integration with Terraform ecosystem, enabling advanced automation and interaction capabilities for Infrastructure as Code (IaC) development.
+- [Vault Radar MCP Server](https://developer.hashicorp.com/hcp/docs/vault-radar/mcp-server/overview) - Provides access to HCP Vault Radar data sources, secret risks, and events, enabling LLMs to query and analyze security information using natural language.
 
 #### 🛠️ Developer Tools
 
