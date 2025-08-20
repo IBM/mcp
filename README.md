@@ -6,7 +6,7 @@ A collection of Model Context Protocol (MCP) servers by IBM, to connect your IBM
 
 MCP is an open-source protocol designed to enable AI models to securely interact with local and remote resources through standardized server implementations. This collection of IBM MCP services focuses on both production-ready and experimental MCP servers that enhance AI capabilities by providing file access, database connections, API integrations, and additional contextual services.
 
-## Available servers
+## Available MCP Servers
 
 #### IBM
 
@@ -33,9 +33,9 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 - [Langflow](https://github.com/langflow-ai/langflow) - Langflow is an open-source visual builder that lets developers rapidly prototype and build AI applications, it integrates with the Model Context Protocol (MCP) as both an MCP server and an MCP client.
 - [WxMCPServer](https://github.com/IBM/WxMCPServer) - IBM webMethods Hybrid Integration (IWHI) based MCP server, that enables existing APIs to be used as MCP tools.
 
-## MCP Clients
+## MCP Client
 
-
+We recommend using [Langflow](https://github.com/langflow-ai/langflow) or your IDE of choice as MCP client.
 
 ## 💬 Community
 
@@ -44,6 +44,12 @@ Participate in the [Discord community](https://discord.com/invite/NzCQQWm7Xs).
 ## 🤝 Contributing
 
 Everyone is invited to contribute to this repository, see [CONTRIBUTING.md](./CONTRIBUTING.md) for information.
+
+Thanks to all of our amazing contributors!
+
+<a href="https://github.com/ibm/mcp/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ibm/mcp" />
+</a>
 
 ## ⭐ Support
 
