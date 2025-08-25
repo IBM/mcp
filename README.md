@@ -1,4 +1,4 @@
-# IBM MCP Servers
+# IBM MCP
 
 A collection of Model Context Protocol (MCP) servers, MCP Clients and Developer Tools by IBM. Connect your IBM products to any AI Agent or AI application.
 
@@ -10,12 +10,13 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 
 #### Automation
 
-- [IBM Decision Server Runtime MCP Server](https://github.com/DecisionsDev/decision-mcp-server) - An MCP Server enabling integration with IBM Decision Server Runtime to retrieve and invoke decision services.
+- [IBM Decision Intelligence MCP Server](https://github.com/DecisionsDev/decision-intelligence-mcp-server) - This MCP server provides tools to invoke decision services deployed by [IBM Decision Intelligence](https://www.ibm.com/products/decision-intelligence) or [IBM Automation Decision Services](https://www.ibm.com/products/automation-decision-services)
 - [IBM MQ Server](https://github.com/ibm-messaging/mq-mcp-server) - Provides access to IBM MQ queue managers health checks, and to run any MQSC command against a specific queue manager.
+- [IBM ODM MCP Server](https://github.com/DecisionsDev/decision-mcp-server) - An MCP Server enabling integration with IBM Decision Server Runtime to retrieve and invoke decision services.
 
 #### Data & Analytics
 
-- [Astra DB](https://github.com/datastax/astra-db-mcp) - An MCP server for Astra DB workloads.
+- [DataStax Astra DB](https://github.com/datastax/astra-db-mcp) - An MCP server for Astra DB workloads.
 - [Docling MCP Server](https://github.com/docling-project/docling-mcp) - Turn unstructured data into structured data using Docling, with tools for document conversion, processing and generation.
 - [IBM watsonx.data Document Retrieval MCP Server](https://github.com/IBM/ibm-watsonxdata-dl-retrieval-mcp-server) - Query document libraries from watsonx.data using conversational language and receive human-readable responses.
   
@@ -44,7 +45,7 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 - [Langflow](https://github.com/langflow-ai/langflow) - Langflow is an open-source visual builder that lets developers rapidly prototype and build AI applications, it integrates with the Model Context Protocol (MCP) as both an MCP server and an MCP client.
 - [WxMCPServer](https://github.com/IBM/WxMCPServer) - IBM webMethods Hybrid Integration (IWHI) based MCP server, that enables existing APIs to be used as MCP tools.
 
-## MCP Client
+## MCP Clients
 
 We recommend using [Langflow](https://github.com/langflow-ai/langflow) or your IDE of choice as MCP client.
 
