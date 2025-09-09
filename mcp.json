@@ -1,0 +1,58 @@
+{
+  "mcpServers": {
+    "ibm-decision-intelligence-mcp-server": {
+      "command": "npx",
+      "args": ["-y", "di-mcp-server"],
+      "env": {
+        "APIKEY": "<APIKEY>",
+        "URL": "https://<TENANT_NAME>.decision-prod-us-south.decision.saas.ibm.com/ads/runtime/api/v1"
+      }
+    },
+    "ibm-mq-mcp-server": {},
+    "ibm-odm-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/DecisionsDev/decision-mcp-server",
+        "decision-mcp-server"
+      ]
+    },
+    "astra-db-mcp-server": {
+      "command": "npx",
+      "args": ["-y", "@datastax/astra-db-mcp"],
+      "env": {
+        "ASTRA_DB_APPLICATION_TOKEN": "YOUR_ASTRA_DB_TOKEN",
+        "ASTRA_DB_API_ENDPOINT": "YOUR_ASTRA_DB_ENDPOINT"
+      }
+    },
+    "docling-mcp-server": {
+      "command": "uvx",
+      "args": ["--from=docling-mcp", "docling-mcp-server"]
+    },
+    "ibm-watsonxdata-dl-retrieval-mcp-server": {},
+    "ibmcloud-mcp-server": {},
+    "ibmcloud-code-engine-mcp-server": {},
+    "ibmcloud-vpc-mcp-server": {},
+    "terraform-mcp-server": {
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "hashicorp/terraform-mcp-server"]
+    },
+    "ibm-instana-mcp-server": {},
+    "ibm-storage-insights-mcp-server": {},
+    "vault-radar-mcp-server": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "-e",
+        "HCP_PROJECT_ID=<HCP Project ID>",
+        "-e",
+        "HCP_CLIENT_ID=<HCP Service Principal Client ID>",
+        "-e",
+        "HCP_CLIENT_SECRET=<HCP Service Principal Client Secret>",
+        "hashicorp/vault-radar-mcp-server:<tag>"
+      ]
+    }
+  }
+}
