@@ -42,6 +42,8 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 
 #### Security
 
+| Server name | Description | Usage |
+|---|---|---|
 | [Vault Radar MCP Server](https://developer.hashicorp.com/hcp/docs/vault-radar/mcp-server/overview) |Provides access to HCP Vault Radar data sources, secret risks, and events, enabling LLMs to query and analyze security information using natural language. | [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install-0098FF?style=plastic&logo=visualstudiocode&logoColor=ffffff)](https://insiders.vscode.dev/redirect?url=vscode:mcp/install?%7B%22name%22%3A%22vault-radar%22%2C%22type%22%3A%22stdio%22%2C%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22--rm%22%2C%22-i%22%2C%22-e%22%2C%22HCP_PROJECT_ID%3D%3CHCP%20Project%20ID%3E%22%2C%22-e%22%2C%22HCP_CLIENT_ID%3D%3CHCP%20Service%20Principal%20Client%20ID%3E%22%2C%22-e%22%2C%22HCP_CLIENT_SECRET%3D%3CHCP%20Service%20Principal%20Client%20Secret%3E%22%2C%22hashicorp%2Fvault-radar-mcp-server%3A%3Ctag%3E%22%5D%7D) |
 
 #### 🛠️ Developer Tools
