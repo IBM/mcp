@@ -33,6 +33,8 @@ Thank you for your interest in contributing to the repository! This document pro
 
    If your MCP server can be run using `uvx`, `npx` or `docker` you can use [this tool](https://vscodemcp.com/) to generate a button for one-click installation in VSCode (or other MCP Clients).
 
+   In the button's markdown code add `https://insiders.vscode.dev/redirect?url=` before `vscode:mcp/install` to make the deeplink work from both the browser and your IDE.
+
 3. Add the MCP Client configuration instructions to [`mcp.json`](./mcp.json)
 
 ## Development Guidelines
