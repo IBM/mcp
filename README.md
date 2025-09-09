@@ -10,31 +10,41 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 
 #### Automation
 
-- [IBM Decision Intelligence MCP Server](https://github.com/DecisionsDev/decision-intelligence-mcp-server) - This MCP server provides tools to invoke decision services deployed by [IBM Decision Intelligence](https://www.ibm.com/products/decision-intelligence) or [IBM Automation Decision Services](https://www.ibm.com/products/automation-decision-services)
-- [IBM MQ Server](https://github.com/ibm-messaging/mq-mcp-server) - Provides access to IBM MQ queue managers health checks, and to run any MQSC command against a specific queue manager.
-- [IBM ODM MCP Server](https://github.com/DecisionsDev/decision-mcp-server) - An MCP Server enabling integration with IBM Decision Server Runtime to retrieve and invoke decision services.
+| Server name | Description | Usage |
+|---|---|---|
+| [IBM Decision Intelligence MCP Server](https://github.com/DecisionsDev/decision-intelligence-mcp-server) | This MCP server provides tools to invoke decision services deployed by [IBM Decision Intelligence](https://www.ibm.com/products/decision-intelligence) or [IBM Automation Decision Services](https://www.ibm.com/products/automation-decision-services) | [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install-0098FF?style=plastic&logo=visualstudiocode&logoColor=ffffff)](vscode:mcp/install?%7B%22name%22%3A%22ibm-decision-intelligence-mcp-server%22%2C%22type%22%3A%22stdio%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22di-mcp-server%22%5D%2C%22env%22%3A%7B%22APIKEY%22%3A%22%3CAPIKEY%3E%22%2C%22URL%22%3A%22https%3A%2F%2F%3CTENANT_NAME%3E.decision-prod-us-south.decision.saas.ibm.com%2Fads%2Fruntime%2Fapi%2Fv1%22%7D%7D)
+| [IBM MQ Server](https://github.com/ibm-messaging/mq-mcp-server) | Provides access to IBM MQ queue managers health checks, and to run any MQSC command against a specific queue manager. | *see link for instructions* |
+| [IBM ODM MCP Server](https://github.com/DecisionsDev/decision-mcp-server) | An MCP Server enabling integration with IBM Decision Server Runtime to retrieve and invoke decision services. | [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install-0098FF?style=plastic&logo=visualstudiocode&logoColor=ffffff)](vscode:mcp/install?%7B%22name%22%3A%22ibm-odm-mcp-server%22%2C%22type%22%3A%22stdio%22%2C%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22--from%22%2C%22git%2Bhttps%3A%2F%2Fgithub.com%2FDecisionsDev%2Fdecision-mcp-server%22%2C%22decision-mcp-server%22%5D%7D) |
 
 #### Data & Analytics
 
-- [DataStax Astra DB](https://github.com/datastax/astra-db-mcp) - An MCP server for Astra DB workloads.
-- [Docling MCP Server](https://github.com/docling-project/docling-mcp) - Turn unstructured data into structured data using Docling, with tools for document conversion, processing and generation.
-- [IBM watsonx.data Document Retrieval MCP Server](https://github.com/IBM/ibm-watsonxdata-dl-retrieval-mcp-server) - Query document libraries from watsonx.data using conversational language and receive human-readable responses.
+| Server name | Description | Usage |
+|---|---|---|
+| [DataStax Astra DB](https://github.com/datastax/astra-db-mcp) | An MCP server for Astra DB workloads. | [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install-0098FF?style=plastic&logo=visualstudiocode&logoColor=ffffff)](vscode:mcp/install?%7B%22name%22%3A%22astra-db-mcp%22%2C%22type%22%3A%22stdio%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40datastax%2Fastra-db-mcp-server%22%5D%2C%22env%22%3A%7B%22ASTRA_DB_APPLICATION_TOKEN%22%3A%22your_astra_db_token%22%2C%22ASTRA_DB_API_ENDPOINT%22%3A%22your_astra_db_endpoint%22%7D%7D) |
+| [Docling MCP Server](https://github.com/docling-project/docling-mcp) | Turn unstructured data into structured data using Docling, with tools for document conversion, processing and generation. | [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install-0098FF?style=plastic&logo=visualstudiocode&logoColor=ffffff)](vscode:mcp/install?%7B%22name%22%3A%22docling-mcp-server%22%2C%22type%22%3A%22stdio%22%2C%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22--from%3Ddocling-mcp%22%2C%22docling-mcp-server%22%5D%7D) |
+| [IBM watsonx.data Document Retrieval MCP Server](https://github.com/IBM/ibm-watsonxdata-dl-retrieval-mcp-server) | Query document libraries from watsonx.data using conversational language and receive human-readable responses. | *see link for instructions* |
   
 #### Infrastructure & Deployment
 
-- [IBM Cloud MCP Server](https://ibm-cloud.github.io/mcp/) - Enhance your LLM with tools from IBM Cloud.
-- [IBM Cloud Code Engine MCP Server](https://github.com/greyhoundforty/code-engine-mcp) - This MCP server provides tools to list and inspect Code Engine projects, applications, revisions, domain mappings, and secrets. 
-- [IBM Cloud VPC MCP Server](https://github.com/greyhoundforty/ibmcloud-vpc-mcp) - Provides access to IBM Cloud VPC resources and security analysis capabilities, enabling AI agents to interact with cloud infrastructure, backups, and security policies.
-- [Terraform MCP Server](https://github.com/hashicorp/terraform-mcp-server) - Provides seamless integration with Terraform ecosystem, enabling advanced automation and interaction capabilities for Infrastructure as Code (IaC) development.
+| Server name | Description | Usage |
+|---|---|---|
+| [IBM Cloud MCP Server](https://ibm-cloud.github.io/mcp/) | Enhance your LLM with tools from IBM Cloud. | *see link for instructions* |
+| [IBM Cloud Code Engine MCP Server](https://github.com/greyhoundforty/code-engine-mcp) | This MCP server provides tools to list and inspect Code Engine projects, applications, revisions, domain mappings, and secrets. | *see link for instructions* |
+| [IBM Cloud VPC MCP Server](https://github.com/greyhoundforty/ibmcloud-vpc-mcp) | Provides access to IBM Cloud VPC resources and security analysis capabilities, enabling AI agents to interact with cloud infrastructure, backups, and security policies. | *see link for instructions* |
+| [Terraform MCP Server](https://github.com/hashicorp/terraform-mcp-server) | Provides seamless integration with Terraform ecosystem, enabling advanced automation and interaction capabilities for Infrastructure as Code (IaC) development. | [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install-0098FF?style=plastic&logo=visualstudiocode&logoColor=ffffff)](vscode:mcp/install?%7B%22name%22%3A%22terraform-mcp-server%22%2C%22type%22%3A%22stdio%22%2C%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22hashicorp%2Fterraform-mcp-server%22%5D%7D) |
 
 #### Observability & Monitoring
 
-- [IBM Instana MCP Server](https://github.com/instana/mcp-instana) - This MCP server provides tools to list and inspect IBM Instana resources, including applications, infrastructure resources etc.
-- [IBM Storage Insights MCP Server](https://github.com/IBM/ibm-storageinsights-mcpserver) - Leverage key IBM Storage Insights monitoring capabilities via an MCP interface.
+| Server name | Description | Usage |
+|---|---|---|
+| [IBM Instana MCP Server](https://github.com/instana/mcp-instana) | This MCP server provides tools to list and inspect IBM Instana resources, including applications, infrastructure resources etc. | *see link for instructions* |
+| [IBM Storage Insights MCP Server](https://github.com/IBM/ibm-storageinsights-mcpserver) | Leverage key IBM Storage Insights monitoring capabilities via an MCP interface. | *see link for instructions* |
 
 #### Security
 
-- [Vault Radar MCP Server](https://developer.hashicorp.com/hcp/docs/vault-radar/mcp-server/overview) - Provides access to HCP Vault Radar data sources, secret risks, and events, enabling LLMs to query and analyze security information using natural language.
+| Server name | Description | Usage |
+|---|---|---|
+| [Vault Radar MCP Server](https://developer.hashicorp.com/hcp/docs/vault-radar/mcp-server/overview) |Provides access to HCP Vault Radar data sources, secret risks, and events, enabling LLMs to query and analyze security information using natural language. | [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install-0098FF?style=plastic&logo=visualstudiocode&logoColor=ffffff)](vscode:mcp/install?%7B%22name%22%3A%22vault-radar%22%2C%22type%22%3A%22stdio%22%2C%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22--rm%22%2C%22-i%22%2C%22-e%22%2C%22HCP_PROJECT_ID%3D%3CHCP%20Project%20ID%3E%22%2C%22-e%22%2C%22HCP_CLIENT_ID%3D%3CHCP%20Service%20Principal%20Client%20ID%3E%22%2C%22-e%22%2C%22HCP_CLIENT_SECRET%3D%3CHCP%20Service%20Principal%20Client%20Secret%3E%22%2C%22hashicorp%2Fvault-radar-mcp-server%3A%3Ctag%3E%22%5D%7D) |
 
 #### 🛠️ Developer Tools
 
