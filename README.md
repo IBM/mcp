@@ -41,10 +41,18 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 | [IBM Instana MCP Server](https://github.com/instana/mcp-instana) | This MCP server provides tools to list and inspect IBM Instana resources, including applications, infrastructure resources etc. | *see link for instructions* |
 | [IBM Storage Insights MCP Server](https://github.com/IBM/ibm-storageinsights-mcpserver) | Leverage key IBM Storage Insights monitoring capabilities via an MCP interface. | *see link for instructions* |
 
+#### Networking
+
+
+| Server name | Description | Usage |
+|---|---|---|
+| [Consul MCP Server](https://hub.docker.com/r/hashicorp/consul-mcp-server) |This MCP server acts as a bridge, giving AI models the ability to execute Consul operations via APIs. | [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install-0098FF?style=plastic&logo=visualstudiocode&logoColor=ffffff)](vscode:mcp/install?%7B%22name%22%3A%22consul%22%2C%22type%22%3A%22stdio%22%2C%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22-e%22%2C%22CONSUL_HTTP_ADDR%3Dhttp%3A%2F%2Fhost.docker.internal%3A8500%22%2C%22-e%22%2C%22CONSUL_HTTP_TOKEN%3D%24%7BCONSUL_DC1_TOKEN%7D%22%2C%22hashicorp%2Fconsul-mcp-server%22%5D%7D) |
+
 #### Security
 
 | Server name | Description | Usage |
 |---|---|---|
+| [Vault MCP Server](https://developer.hashicorp.com/hcp/docs/vault-radar/mcp-server/overview) |This MCP server acts as a bridge, giving AI models the ability to execute kv, pki, and mount operations in Vault via APIs. | [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install-0098FF?style=plastic&logo=visualstudiocode&logoColor=ffffff)](vscode:mcp/install?%7B%22name%22%3A%22vault-mcp-server%22%2C%22type%22%3A%22stdio%22%2C%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22--rm%22%2C%22-i%22%2C%22-e%22%2C%22VAULT_ADDR%3D%3CVault%20Address%3E%22%2C%22-e%22%2C%22VAULT_TOKEN%3D%3CVault%20Token%3E%22%2C%22-e%22%2C%22VAULT_NAMESPACE%3D%3CVault%20Namespace%3E%22%2C%22hashicorp%2Fvault-mcp-server%22%5D%7D) |
 | [Vault Radar MCP Server](https://developer.hashicorp.com/hcp/docs/vault-radar/mcp-server/overview) |Provides access to HCP Vault Radar data sources, secret risks, and events, enabling LLMs to query and analyze security information using natural language. | [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install-0098FF?style=plastic&logo=visualstudiocode&logoColor=ffffff)](https://insiders.vscode.dev/redirect?url=vscode:mcp/install?%7B%22name%22%3A%22vault-radar%22%2C%22type%22%3A%22stdio%22%2C%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22--rm%22%2C%22-i%22%2C%22-e%22%2C%22HCP_PROJECT_ID%3D%3CHCP%20Project%20ID%3E%22%2C%22-e%22%2C%22HCP_CLIENT_ID%3D%3CHCP%20Service%20Principal%20Client%20ID%3E%22%2C%22-e%22%2C%22HCP_CLIENT_SECRET%3D%3CHCP%20Service%20Principal%20Client%20Secret%3E%22%2C%22hashicorp%2Fvault-radar-mcp-server%3A%3Ctag%3E%22%5D%7D) |
 
 #### 🛠️ Developer Tools

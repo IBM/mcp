@@ -35,23 +35,50 @@
     "ibmcloud-vpc-mcp-server": {},
     "terraform-mcp-server": {
       "command": "docker",
-      "args": ["run", "-i", "--rm", "hashicorp/terraform-mcp-server"]
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e", "TFE_ADDRESS=<HCP Terraform or TFE Address>",
+        "-e", "TFE_TOKEN=<HCP Terraform or TFE Token>",
+        "hashicorp/terraform-mcp-server"
+      ]
     },
     "ibm-instana-mcp-server": {},
     "ibm-storage-insights-mcp-server": {},
+    "consul-mcp-server": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "-e", "CONSUL_HTTP_ADDR=<Consul HTTP Address>",
+        "-e", "CONSUL_HTTP_TOKEN=<Consul HTTP Token>",
+        "hashicorp/consul-mcp-server"
+      ]
+    },
+    "vault-mcp-server": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "-e", "VAULT_ADDR=<Vault Address>",
+        "-e", "VAULT_TOKEN=<Vault Token>",
+        "-e", "VAULT_NAMESPACE=<Vault Namespace>",
+        "hashicorp/vault-mcp-server"
+      ]
+    },
     "vault-radar-mcp-server": {
       "command": "docker",
       "args": [
         "run",
         "--rm",
         "-i",
-        "-e",
-        "HCP_PROJECT_ID=<HCP Project ID>",
-        "-e",
-        "HCP_CLIENT_ID=<HCP Service Principal Client ID>",
-        "-e",
-        "HCP_CLIENT_SECRET=<HCP Service Principal Client Secret>",
-        "hashicorp/vault-radar-mcp-server:<tag>"
+        "-e", "HCP_PROJECT_ID=<HCP Project ID>",
+        "-e", "HCP_CLIENT_ID=<HCP Service Principal Client ID>",
+        "-e", "HCP_CLIENT_SECRET=<HCP Service Principal Client Secret>",
+        "hashicorp/vault-radar-mcp-server"
       ]
     }
   }
