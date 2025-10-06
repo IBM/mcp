@@ -29,7 +29,25 @@
       "command": "uvx",
       "args": ["--from=docling-mcp", "docling-mcp-server"]
     },
-    "ibm-watsonxdata-dl-retrieval-mcp-server": {},
+    "ibm_watsonxdata_local_mcp_server": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["ibm-watsonxdata-dl-retrieval-mcp-server", "--transport", "stdio"],
+      "env": {
+        "WATSONX_DATA_API_KEY": "YOUR_API_KEY",
+        "WATSONX_DATA_RETRIEVAL_ENDPOINT": "YOUR_RETRIVAL_ENDPOINT",
+        "WATSONX_DATA_TOKEN_GENERATION_ENDPOINT": "YOUR_BEARER_TOKEN_ENDPOINT",
+        "DOCUMENT_LIBRARY_API_ENDPOINT": "YOUR_DOCUMENT_LIBRARY_ENDPOINT",
+        "LH_CONTEXT": "SAAS"
+      }
+    },
+    "ibm_watsonxdata_remote_mcp_server": {
+      "url": "https://YOUR_INSTANCE_URL/api/v1/mcp/",
+      "headers": {
+        "authorization": "Bearer TOKEN"
+      },
+      "type": "http"
+    },
     "ibmcloud-mcp-server": {},
     "ibmcloud-code-engine-mcp-server": {},
     "ibmcloud-vpc-mcp-server": {},
