@@ -26,7 +26,7 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 | [IBM watsonx.data local MCP server](https://github.com/IBM/ibm-watsonxdata-dl-retrieval-mcp-server) | Query document libraries from watsonx.data using conversational language and receive human-readable responses using local MCP server. | *see link for instructions* |
 | [IBM watsonx.data remote MCP server](https://www.ibm.com/docs/en/watsonxdata/saas?topic=service-watsonxdata-remote-model-context-protocol-mcp-server) | Query document libraries from watsonx.data using conversational language and receive human-readable responses using remote MCP server hosted in IBM infrastructure. | *see link for instructions* |
 | [IBM watsonx.data intelligence MCP Server](https://github.com/IBM/data-intelligence-mcp-server) | MCP Server to interact with watsonx.data intelligence on-prem or on SaaS environment. | *see link for instructions* |
-  
+
 #### Infrastructure & Deployment
 
 | Server name | Description | Usage |
@@ -45,7 +45,6 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 
 #### Networking
 
-
 | Server name | Description | Usage |
 |---|---|---|
 | [Consul MCP Server](https://hub.docker.com/r/hashicorp/consul-mcp-server) |This MCP server acts as a bridge, giving AI models the ability to execute Consul operations via APIs. | [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install-0098FF?style=plastic&logo=visualstudiocode&logoColor=ffffff)](vscode:mcp/install?%7B%22name%22%3A%22consul%22%2C%22type%22%3A%22stdio%22%2C%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22-e%22%2C%22CONSUL_HTTP_ADDR%3Dhttp%3A%2F%2Fhost.docker.internal%3A8500%22%2C%22-e%22%2C%22CONSUL_HTTP_TOKEN%3D%24%7BCONSUL_DC1_TOKEN%7D%22%2C%22hashicorp%2Fconsul-mcp-server%22%5D%7D) |
@@ -56,6 +55,12 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 |---|---|---|
 | [Vault MCP Server](https://developer.hashicorp.com/hcp/docs/vault-radar/mcp-server/overview) |This MCP server acts as a bridge, giving AI models the ability to execute kv, pki, and mount operations in Vault via APIs. | [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install-0098FF?style=plastic&logo=visualstudiocode&logoColor=ffffff)](vscode:mcp/install?%7B%22name%22%3A%22vault-mcp-server%22%2C%22type%22%3A%22stdio%22%2C%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22--rm%22%2C%22-i%22%2C%22-e%22%2C%22VAULT_ADDR%3D%3CVault%20Address%3E%22%2C%22-e%22%2C%22VAULT_TOKEN%3D%3CVault%20Token%3E%22%2C%22-e%22%2C%22VAULT_NAMESPACE%3D%3CVault%20Namespace%3E%22%2C%22hashicorp%2Fvault-mcp-server%22%5D%7D) |
 | [Vault Radar MCP Server](https://developer.hashicorp.com/hcp/docs/vault-radar/mcp-server/overview) |Provides access to HCP Vault Radar data sources, secret risks, and events, enabling LLMs to query and analyze security information using natural language. | [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install-0098FF?style=plastic&logo=visualstudiocode&logoColor=ffffff)](https://insiders.vscode.dev/redirect?url=vscode:mcp/install?%7B%22name%22%3A%22vault-radar%22%2C%22type%22%3A%22stdio%22%2C%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22--rm%22%2C%22-i%22%2C%22-e%22%2C%22HCP_PROJECT_ID%3D%3CHCP%20Project%20ID%3E%22%2C%22-e%22%2C%22HCP_CLIENT_ID%3D%3CHCP%20Service%20Principal%20Client%20ID%3E%22%2C%22-e%22%2C%22HCP_CLIENT_SECRET%3D%3CHCP%20Service%20Principal%20Client%20Secret%3E%22%2C%22hashicorp%2Fvault-radar-mcp-server%3A%3Ctag%3E%22%5D%7D) |
+
+#### DevOps
+
+| Server name | Description | Usage |
+|---|---|---|
+|[IBM Developer for z/OS on VS Code MCP Server](https://www.ibm.com/docs/en/developer-for-zos/17.0.x?topic=overview-agent-mode) | MCP server that runs as part of IBM's z/OS enterprise application development editor for COBOL, PL/I, REXX, JCL, and Assembler. Enable your AI Chat in VS Code with access to your local workspace as well as your remote z/OS development environment. Interact with z/OS retrieving or updating data sets, submitting jobs and fetching job info and spool files, retrieving files from your z/OS UNIX home directory and open it in the editor, building you application and analyzing problems with guidance for how to fix them, and much more. | [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install-0098FF?style=plastic&logo=visualstudiocode&logoColor=ffffff)](vscode:extension/IBM.zopeneditor)|
 
 #### 🛠️ Developer Tools
 
