@@ -49,6 +49,17 @@
       "type": "http"
     },
     "ibmcloud-mcp-server": {},
+    "tim-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/terraform-ibm-modules/tim-mcp.git",
+        "tim-mcp"
+      ],
+      "env": {
+        "GITHUB_TOKEN": "<your_github_token>"
+      }
+    },
     "ibmcloud-code-engine-mcp-server": {},
     "ibmcloud-vpc-mcp-server": {},
     "terraform-mcp-server": {
