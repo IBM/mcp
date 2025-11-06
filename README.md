@@ -32,6 +32,7 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 | Server name | Description | Usage |
 |---|---|---|
 | [IBM Cloud MCP Server](https://ibm-cloud.github.io/mcp/) | Enhance your LLM with tools from IBM Cloud. | *see link for instructions* |
+| [Terraform IBM Modules (TIM) MCP Server](https://github.com/terraform-ibm-modules/tim-mcp) | The TIM-MCP server provides structured access to the Terraform IBM Modules(TIM) ecosystem, enabling intelligent provisioning of IBM Cloud infrastructure resources as code. | *see link for instructions* |
 | [IBM Cloud Code Engine MCP Server](https://github.com/greyhoundforty/code-engine-mcp) | This MCP server provides tools to list and inspect Code Engine projects, applications, revisions, domain mappings, and secrets. | *see link for instructions* |
 | [IBM Cloud VPC MCP Server](https://github.com/greyhoundforty/ibmcloud-vpc-mcp) | Provides access to IBM Cloud VPC resources and security analysis capabilities, enabling AI agents to interact with cloud infrastructure, backups, and security policies. | *see link for instructions* |
 | [IBM Power Virtual Server MCP Server](https://github.com/IBM/powervs-mcp-server) | Brings to AI-Agents seamless observability and diagnosis of their virtual machines registered with IBM Power Virtual Server  | *see link for instructions* |
