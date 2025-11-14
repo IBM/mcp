@@ -9,12 +9,12 @@
       }
     },
     "ibm-mq-mcp-server": {},
-    "ibm-odm-mcp-server": {
+    "ibm-odm-decision-mcp-server": {
       "command": "uvx",
       "args": [
         "--from",
-        "git+https://github.com/DecisionsDev/decision-mcp-server",
-        "decision-mcp-server"
+        "git+https://github.com/DecisionsDev/ibm-odm-decision-mcp-server",
+        "start"
       ]
     },
     "astra-db-mcp-server": {
