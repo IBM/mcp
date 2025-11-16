@@ -31,7 +31,7 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 
 | Server name | Description | Usage |
 |---|---|---|
-| [Carbon MCP](https://github.com/carbon-design-system/carbon-mcp) | **(IBM Internal)** Provides tools to explore Carbon Design System components, tokens, and icons, answer documentation questions, and generate consistent UI code. | *Cloud server access [instructions.](https://pages.github.ibm.com/carbon/ibm-products/developing/carbon-mcp/overview/)* |
+| [Carbon MCP](https://github.com/carbon-design-system/carbon-mcp) | Provides tools to explore Carbon Design System components, tokens, and icons, answer documentation questions, and generate consistent UI code. | *Cloud server access [instructions.](https://pages.github.ibm.com/carbon/ibm-products/developing/carbon-mcp/overview/)* |
 
 #### Infrastructure & Deployment
 
