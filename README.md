@@ -12,7 +12,6 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 
 | Server name | Description | Usage |
 |---|---|---|
-| [Carbon MCP](https://github.com/carbon-design-system/carbon-mcp) | **(IBM Internal)** Provides tools to explore Carbon Design System components, tokens, and icons, answer documentation questions, and generate consistent UI code. | *Cloud server access [instructions.](https://pages.github.ibm.com/carbon/ibm-products/developing/carbon-mcp/overview/)* |
 | [IBM Decision Intelligence MCP Server](https://github.com/DecisionsDev/decision-intelligence-mcp-server) | This MCP server provides tools to invoke decision services deployed by [IBM Decision Intelligence](https://www.ibm.com/products/decision-intelligence) or [IBM Automation Decision Services](https://www.ibm.com/products/automation-decision-services) | [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install-0098FF?style=plastic&logo=visualstudiocode&logoColor=ffffff)](https://insiders.vscode.dev/redirect?url=vscode:mcp/install?%7B%22name%22%3A%22ibm-decision-intelligence-mcp-server%22%2C%22type%22%3A%22stdio%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22di-mcp-server%22%5D%2C%22env%22%3A%7B%22APIKEY%22%3A%22%3CAPIKEY%3E%22%2C%22URL%22%3A%22https%3A%2F%2F%3CTENANT_NAME%3E.decision-prod-us-south.decision.saas.ibm.com%2Fads%2Fruntime%2Fapi%2Fv1%22%7D%7D) |
 | [IBM MQ Server](https://github.com/ibm-messaging/mq-mcp-server) | Provides access to IBM MQ queue managers health checks, and to run any MQSC command against a specific queue manager. | *see link for instructions* |
 | [IBM ODM MCP Server](https://github.com/DecisionsDev/decision-mcp-server) | An MCP Server enabling integration with IBM Decision Server Runtime to retrieve and invoke decision services. | [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install-0098FF?style=plastic&logo=visualstudiocode&logoColor=ffffff)](https://insiders.vscode.dev/redirect?url=vscode:mcp/install?%7B%22name%22%3A%22ibm-odm-mcp-server%22%2C%22type%22%3A%22stdio%22%2C%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22--from%22%2C%22git%2Bhttps%3A%2F%2Fgithub.com%2FDecisionsDev%2Fdecision-mcp-server%22%2C%22decision-mcp-server%22%5D%7D) |
@@ -27,6 +26,12 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 | [IBM watsonx.data local MCP server](https://github.com/IBM/ibm-watsonxdata-dl-retrieval-mcp-server) | Query document libraries from watsonx.data using conversational language and receive human-readable responses using local MCP server. | *see link for instructions* |
 | [IBM watsonx.data remote MCP server](https://www.ibm.com/docs/en/watsonxdata/saas?topic=service-watsonxdata-remote-model-context-protocol-mcp-server) | Query document libraries from watsonx.data using conversational language and receive human-readable responses using remote MCP server hosted in IBM infrastructure. | *see link for instructions* |
 | [IBM watsonx.data intelligence MCP Server](https://github.com/IBM/data-intelligence-mcp-server) | MCP Server to interact with watsonx.data intelligence on-prem or on SaaS environment. | *see link for instructions* |
+
+#### Developer Productivity
+
+| Server name | Description | Usage |
+|---|---|---|
+| [Carbon MCP](https://github.com/carbon-design-system/carbon-mcp) | **(IBM Internal)** Provides tools to explore Carbon Design System components, tokens, and icons, answer documentation questions, and generate consistent UI code. | *Cloud server access [instructions.](https://pages.github.ibm.com/carbon/ibm-products/developing/carbon-mcp/overview/)* |
 
 #### Infrastructure & Deployment
 
