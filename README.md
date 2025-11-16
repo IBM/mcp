@@ -27,6 +27,12 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 | [IBM watsonx.data remote MCP server](https://www.ibm.com/docs/en/watsonxdata/saas?topic=service-watsonxdata-remote-model-context-protocol-mcp-server) | Query document libraries from watsonx.data using conversational language and receive human-readable responses using remote MCP server hosted in IBM infrastructure. | *see link for instructions* |
 | [IBM watsonx.data intelligence MCP Server](https://github.com/IBM/data-intelligence-mcp-server) | MCP Server to interact with watsonx.data intelligence on-prem or on SaaS environment. | *see link for instructions* |
 
+#### Developer Productivity
+
+| Server name | Description | Usage |
+|---|---|---|
+| [Carbon MCP](https://github.com/carbon-design-system/carbon-mcp) | Provides tools to explore Carbon Design System components, tokens, and icons, answer documentation questions, and generate consistent UI code. | *Cloud server access [instructions.](https://pages.github.ibm.com/carbon/ibm-products/developing/carbon-mcp/overview/)* |
+
 #### Infrastructure & Deployment
 
 | Server name | Description | Usage |

@@ -1,5 +1,16 @@
 {
   "mcpServers": {
+    "carbon-mcp": {
+        "type": "streamable-http",
+        "url": "https://mcp.carbondesignsystem.com/mcp",
+        "disabled": false,
+        "timeout": 600,
+        "headers": {
+          "Authorization": "Bearer <TOKEN>",
+          "X-MCP-Session": "<opaque-session-id>"
+        },
+      "alwaysAllow": ["docs_search", "code_search"]
+    },
     "ibm-decision-intelligence-mcp-server": {
       "command": "npx",
       "args": ["-y", "di-mcp-server"],
