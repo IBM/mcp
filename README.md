@@ -81,6 +81,7 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 - [Langflow](https://github.com/langflow-ai/langflow) - Langflow is an open-source visual builder that lets developers rapidly prototype and build AI applications, it integrates with the Model Context Protocol (MCP) as both an MCP server and an MCP client.
 - [MCP Composer](https://pypi.org/project/mcp-composer/) - FastMCP based library to manages multiple MCP servers & tools with dynamic registration, authentication, and unified interface.. Supports multiple tool types, such as OpenAPI (REST), GraphQL, CLI-based tools, client SDKs, and nested MCP servers.
 - [WxMCPServer](https://github.com/IBM/WxMCPServer) - IBM webMethods Hybrid Integration (IWHI) based MCP server, that enables existing APIs to be used as MCP tools.
+- [z/OS Connect](https://www.ibm.com/docs/en/zos-connect/3.0.0?topic=connect-what-is-mcp) - z/OS Connect based MCP server, that enables existing APIs to be used as MCP tools.
 
 ## MCP Clients
 
