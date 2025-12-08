@@ -16,7 +16,7 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 | [IBM Process Mining](https://www.ibm.com/docs/en/process-mining/2.1.0?topic=menu-generating-mcp-rest-api-tokens) | Provides access to processes and Data Analyst features. | *see link for instructions* |
 | [K* Planner](https://github.com/IBM/kstar/tree/main/mcp) | K* MCP Server provides a containerized deployment of Top-K and Top-Q planners from the KStar repository as Model Checking Problem (MCP) tools. | *see link for instructions* |
 
-#### 💼 Business automation
+#### 💼 Business Automation
 
 | Server name | Description | Usage |
 |---|---|---|
