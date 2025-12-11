@@ -1,5 +1,19 @@
 {
   "mcpServers": {
+    "core-cs-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/ibm-ecm/ibm-content-services-mcp-server",
+        "core-cs-mcp-server"
+      ],
+      "env": {
+        "USERNAME": "YOUR_USERNAME",
+        "PASSWORD": "YOUR_PASSWORD",
+        "SERVER_URL": "YOUR_GRAPHQL_SERVER_ENDPOINT",
+        "OBJECT_STORE": "YOUR_OBJECT_STORE_NAME"
+      }
+    },
     "carbon-mcp": {
         "type": "streamable-http",
         "url": "https://mcp.carbondesignsystem.com/mcp",
