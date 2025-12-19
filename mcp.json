@@ -42,6 +42,19 @@
         "start"
       ]
     },
+    "ibm-baw-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/ibmbpm/ibm-baw-mcp-server",
+        "ibm-baw-mcp-server"
+      ],
+      "env": {
+        "ENDPOINT": "YOUR_WORKFLOW_ENDPOINT",
+        "USERID": "YOUR_WORKFLOW_USERNAME",
+        "PASSWORD": "YOUR_WORKFLOW_PASWORD"
+      }
+    },
     "astra-db-mcp-server": {
       "command": "npx",
       "args": ["-y", "@datastax/astra-db-mcp"],
