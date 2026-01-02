@@ -55,6 +55,24 @@
         "PASSWORD": "YOUR_WORKFLOW_PASWORD"
       }
     },
+    "ibmi-mcp-server": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@ibm/ibmi-mcp-server@latest",
+        "--transport",
+        "http",
+        "--tools",
+        "./tools/performance/performance.yaml"
+      ],
+      "env": {
+        "DB2i_HOST": "YOUR_WORKFLOW_ENDPOINT",
+        "DB2i_USER": "YOUR_WORKFLOW_USERNAME",
+        "DB2i_PASS": "YOUR_WORKFLOW_PASWORD",
+        "DB2i_PORT": "YOUR_WORKFLOW_PORT",
+        "DB2i_IGNORE_UNAUTHORIZED": "true"
+      }
+    },
     "astra-db-mcp-server": {
       "command": "npx",
       "args": ["-y", "@datastax/astra-db-mcp"],
