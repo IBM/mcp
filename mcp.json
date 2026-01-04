@@ -100,6 +100,17 @@
     },
     "ibmcloud-code-engine-mcp-server": {},
     "ibmcloud-vpc-mcp-server": {},
+    "ibmi-mcp-server": {
+      "command": "npx",
+      "args": ["-y", "@ibm/ibmi-mcp-server@latest"],
+      "env": {
+        "TOOLS_YAML_PATH": "/path/to/your/tools.yaml",
+        "DB2i_HOST": "your-ibmi-host.com",
+        "DB2i_USER": "your-username",
+        "DB2i_PASS": "your-password",
+        "DB2i_PORT": "8076"
+      }
+    },
     "terraform-mcp-server": {
       "command": "docker",
       "args": [
