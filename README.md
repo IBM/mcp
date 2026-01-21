@@ -34,6 +34,7 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 | [IBM watsonx.data local MCP server](https://github.com/IBM/ibm-watsonxdata-dl-retrieval-mcp-server) | Query document libraries from watsonx.data using conversational language and receive human-readable responses using local MCP server. | *see link for instructions* |
 | [IBM watsonx.data remote MCP server](https://www.ibm.com/docs/en/watsonxdata/saas?topic=service-watsonxdata-remote-model-context-protocol-mcp-server) | Query document libraries from watsonx.data using conversational language and receive human-readable responses using remote MCP server hosted in IBM infrastructure. | *see link for instructions* |
 | [IBM watsonx.data intelligence MCP Server](https://github.com/IBM/data-intelligence-mcp-server) | MCP Server to interact with watsonx.data intelligence on-prem or on SaaS environment. | *see link for instructions* |
+| [IBM MDM MCP Server](https://github.com/IBM/mdm-mcp-server) | This MCP server enables AI assistants like Claude to interact with IBM MDM services(formarly known as IBM Match 360), allowing users to search records, retrieve data models, and manage master data through natural language conversations. The server acts as a bridge between AI assistants and IBM MDM, exposing enterprise data management capabilities through the Model Context Protocol. | *see link for instructions* |
 
 #### 👩🏻‍💻 Developer Productivity
 
