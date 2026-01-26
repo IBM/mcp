@@ -39,7 +39,7 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 
 | Server name | Description | Usage |
 |---|---|---|
-| [Carbon MCP](https://github.com/carbon-design-system/carbon-mcp) | Provides tools to explore Carbon Design System components, tokens, and icons, answer documentation questions, and generate consistent UI code. | *Cloud server access [instructions.](https://pages.github.ibm.com/carbon/ibm-products/developing/carbon-mcp/overview/)* |
+| [Carbon MCP](https://github.com/carbon-design-system/carbon-mcp-internal) | Provides tools to explore Carbon Design System components, tokens, and icons, answer documentation questions, and generate consistent UI code. | *Cloud server access [instructions.](https://pages.github.ibm.com/carbon/ibm-products/developing/carbon-mcp/overview/)* |
 | [IBM Developer for z/OS on VS Code MCP Server](https://www.ibm.com/docs/en/developer-for-zos/17.0.x?topic=overview-agent-mode) | MCP server that runs as part of IBM's z/OS enterprise application development editor for COBOL, PL/I, REXX, JCL, and Assembler. Enable your AI Chat in VS Code with access to your local workspace as well as your remote z/OS development environment. Interact with z/OS retrieving or updating data sets, submitting jobs and fetching job info and spool files, retrieving files from your z/OS UNIX home directory and open it in the editor, building you application and analyzing problems with guidance for how to fix them, and much more. | [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install-0098FF?style=plastic&logo=visualstudiocode&logoColor=ffffff)](https://insiders.vscode.dev/redirect?url=vscode:extension/IBM.zopeneditor) |
 
 #### 🏗️ Infrastructure & Deployment
