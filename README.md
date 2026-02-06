@@ -13,7 +13,7 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 | Server name | Description | Usage |
 |---|---|---|
 | [IBM MQ Server](https://github.com/ibm-messaging/mq-mcp-server) | Provides access to IBM MQ queue managers health checks, and to run any MQSC command against a specific queue manager. | *see link for instructions* |
-| [IBM App Connect]([https://github.com/ibm-messaging/mq-mcp-server](https://www.ibm.com/docs/en/app-connect/13.0.x?topic=dashboard-creating-managing-mcp-servers)) | Provides access to IBM App Connect connectors to interact with external integration providers | *see link for instructions* |
+| [IBM App Connect]([https://github.com/ibm-messaging/mq-mcp-server](https://www.ibm.com/docs/en/app-connect/13.0.x?topic=dashboard-creating-managing-mcp-servers)) | Provides access to IBM App Connect connector actions to interact with external AI Agents | *see link for instructions* |
 | [K* Planner](https://github.com/IBM/kstar/tree/main/mcp) | K* MCP Server provides a containerized deployment of Top-K and Top-Q planners from the KStar repository as Model Checking Problem (MCP) tools. | *see link for instructions* |
 
 #### 💼 Business Automation
