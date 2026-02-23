@@ -1,0 +1,189 @@
+{
+  "mcpServers": {
+    "core-cs-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/ibm-ecm/ibm-content-services-mcp-server",
+        "core-cs-mcp-server"
+      ],
+      "env": {
+        "USERNAME": "YOUR_USERNAME",
+        "PASSWORD": "YOUR_PASSWORD",
+        "SERVER_URL": "YOUR_GRAPHQL_SERVER_ENDPOINT",
+        "OBJECT_STORE": "YOUR_OBJECT_STORE_NAME"
+      }
+    },
+    "carbon-mcp": {
+        "type": "streamable-http",
+        "url": "https://mcp.carbondesignsystem.com/mcp",
+        "disabled": false,
+        "timeout": 600,
+        "headers": {
+          "Authorization": "Bearer <TOKEN>",
+          "X-MCP-Session": "<opaque-session-id>"
+        },
+      "alwaysAllow": ["docs_search", "code_search"]
+    },
+    "ibm-decision-intelligence-mcp-server": {
+      "command": "npx",
+      "args": ["-y", "di-mcp-server"],
+      "env": {
+        "APIKEY": "<APIKEY>",
+        "URL": "https://<TENANT_NAME>.decision-prod-us-south.decision.saas.ibm.com/ads/runtime/api/v1"
+      }
+    },
+    "ibm-mq-mcp-server": {},
+    "ibm-odm-decision-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/DecisionsDev/ibm-odm-decision-mcp-server",
+        "start"
+      ]
+    },
+    "ibm-baw-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/ibmbpm/ibm-baw-mcp-server",
+        "ibm-baw-mcp-server"
+      ],
+      "env": {
+        "ENDPOINT": "YOUR_WORKFLOW_ENDPOINT",
+        "USERID": "YOUR_WORKFLOW_USERNAME",
+        "PASSWORD": "YOUR_WORKFLOW_PASWORD"
+      }
+    },
+    "astra-db-mcp-server": {
+      "command": "npx",
+      "args": ["-y", "@datastax/astra-db-mcp"],
+      "env": {
+        "ASTRA_DB_APPLICATION_TOKEN": "YOUR_ASTRA_DB_TOKEN",
+        "ASTRA_DB_API_ENDPOINT": "YOUR_ASTRA_DB_ENDPOINT"
+      }
+    },
+    "docling-mcp-server": {
+      "command": "uvx",
+      "args": ["--from=docling-mcp", "docling-mcp-server"]
+    },
+    "ibm_watsonxdata_local_mcp_server": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["ibm-watsonxdata-dl-retrieval-mcp-server", "--transport", "stdio"],
+      "env": {
+        "WATSONX_DATA_API_KEY": "YOUR_API_KEY",
+        "WATSONX_DATA_RETRIEVAL_ENDPOINT": "YOUR_RETRIVAL_ENDPOINT",
+        "WATSONX_DATA_TOKEN_GENERATION_ENDPOINT": "YOUR_BEARER_TOKEN_ENDPOINT",
+        "DOCUMENT_LIBRARY_API_ENDPOINT": "YOUR_DOCUMENT_LIBRARY_ENDPOINT",
+        "LH_CONTEXT": "SAAS"
+      }
+    },
+    "ibm_watsonxdata_remote_mcp_server": {
+      "url": "https://YOUR_INSTANCE_URL/api/v1/mcp/",
+      "headers": {
+        "authorization": "Bearer TOKEN"
+      },
+      "type": "http"
+    },
+    "ibmcloud-mcp-server": {},
+    "tim-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/terraform-ibm-modules/tim-mcp.git",
+        "tim-mcp"
+      ],
+      "env": {
+        "GITHUB_TOKEN": "<your_github_token>"
+      }
+    },
+    "ibmcloud-code-engine-mcp-server": {},
+    "ibmcloud-vpc-mcp-server": {},
+    "ibmi-mcp-server": {
+      "command": "npx",
+      "args": ["-y", "@ibm/ibmi-mcp-server@latest"],
+      "env": {
+        "TOOLS_YAML_PATH": "/path/to/your/tools.yaml",
+        "DB2i_HOST": "your-ibmi-host.com",
+        "DB2i_USER": "your-username",
+        "DB2i_PASS": "your-password",
+        "DB2i_PORT": "8076"
+      }
+    },
+    "terraform-mcp-server": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e", "TFE_ADDRESS=<HCP Terraform or TFE Address>",
+        "-e", "TFE_TOKEN=<HCP Terraform or TFE Token>",
+        "hashicorp/terraform-mcp-server"
+      ]
+    },
+    "ibm-instana-mcp-server": {},
+    "ibm-storage-insights-mcp-server": {},
+    "consul-mcp-server": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "-e", "CONSUL_HTTP_ADDR=<Consul HTTP Address>",
+        "-e", "CONSUL_HTTP_TOKEN=<Consul HTTP Token>",
+        "hashicorp/consul-mcp-server"
+      ]
+    },
+    "verify-mcp-server": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e", "VERIFY_TENANT=<IBM Security Verify Tenant URL>",
+        "-e", "API_CLIENT_ID=<OAuth API Client ID>",
+        "-e", "API_CLIENT_SECRET=<OAuth API Client Secret>",
+        "ghcr.io/ibm/verify-mcp-server:latest",
+        "--stdio"
+      ]
+    },
+    "qradar-mcp-server": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e", "QRADAR_HOST=<QRadar Console URL>",
+        "-e", "QRADAR_API_TOKEN=<QRadar API Token>",
+        "-e", "QRADAR_VERIFY_SSL=false",
+        "ghcr.io/ibm/qradar-mcp-server:latest",
+        "--stdio"
+      ]
+    },
+    "vault-mcp-server": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "-e", "VAULT_ADDR=<Vault Address>",
+        "-e", "VAULT_TOKEN=<Vault Token>",
+        "-e", "VAULT_NAMESPACE=<Vault Namespace>",
+        "hashicorp/vault-mcp-server"
+      ]
+    },
+    "vault-radar-mcp-server": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "-e", "HCP_PROJECT_ID=<HCP Project ID>",
+        "-e", "HCP_CLIENT_ID=<HCP Service Principal Client ID>",
+        "-e", "HCP_CLIENT_SECRET=<HCP Service Principal Client Secret>",
+        "hashicorp/vault-radar-mcp-server"
+      ]
+    }
+  }
+}
