@@ -98,6 +98,7 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 - [MCP Composer](https://pypi.org/project/mcp-composer/) - FastMCP based library to manages multiple MCP servers & tools with dynamic registration, authentication, and unified interface.. Supports multiple tool types, such as OpenAPI (REST), GraphQL, CLI-based tools, client SDKs, and nested MCP servers.
 - [WxMCPServer](https://github.com/IBM/WxMCPServer) - IBM webMethods Hybrid Integration (IWHI) based MCP server, that enables existing APIs to be used as MCP tools.
 - [z/OS Connect](https://www.ibm.com/docs/en/zos-connect/3.0.0?topic=connect-what-is-mcp) - z/OS Connect based MCP server, that enables existing APIs to be used as MCP tools.
+- [IBM API Connect MCP Server](https://github.com/ibm-apiconnect/apic-mcp-server) - IBM APIC MCP server exposes API Connect capabilities to your MCP clients and AI Agent workflows.
 
 ## MCP Clients
 
