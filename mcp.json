@@ -135,6 +135,23 @@
         "hashicorp/consul-mcp-server"
       ]
     },
+    "gdp-mcp-server": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e", "GDP_HOST=<Guardium Appliance Hostname>",
+        "-e", "GDP_PORT=<Guardium REST API Port>",
+        "-e", "GDP_CLIENT_ID=<OAuth Client ID>",
+        "-e", "GDP_CLIENT_SECRET=<OAuth Client Secret>",
+        "-e", "GDP_USERNAME=<Guardium Username>",
+        "-e", "GDP_PASSWORD=<Guardium Password>",
+        "-e", "GDP_VERIFY_SSL=false",
+        "ghcr.io/ibm/gdp-mcp-server:latest",
+        "--stdio"
+      ]
+    },
     "qradar-mcp-server": {
       "command": "docker",
       "args": [

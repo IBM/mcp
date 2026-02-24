@@ -81,6 +81,7 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 
 | Server name | Description | Usage |
 |---|---|---|
+| [Guardium Data Protection MCP Server](https://github.com/IBM/gdp-mcp-server) | Access 621 IBM Guardium Data Protection REST API endpoints through 4 intelligent MCP tools — search APIs, list categories, get API details, and execute any GDP endpoint. | *[see link for instructions](https://github.com/IBM/gdp-mcp-server)* |
 | [QRadar SIEM MCP Server](https://github.com/IBM/qradar-mcp-server) | Access 728+ IBM QRadar REST API endpoints through 4 intelligent MCP tools — search offenses, run AQL queries, manage reference sets, and investigate security incidents. | *[see link for instructions](https://github.com/IBM/qradar-mcp-server)* |
 | [Guardium Cryptography Manager MCP Server](https://github.com/IBM/gcm-mcp-server) | Access 292 IBM Guardium Cryptography Manager API endpoints through 3 intelligent MCP tools — manage encryption keys, run discovery scans, enforce crypto policies, and monitor compliance. | *[see link for instructions](https://github.com/IBM/gcm-mcp-server)* |
 | [IBM Security Verify MCP Server](https://github.com/IBM/verify-mcp-server) | Access 210 IBM Security Verify REST API endpoints through 4 intelligent MCP tools — discover APIs, manage users, configure SSO, and orchestrate identity workflows. | *[see link for instructions](https://github.com/IBM/verify-mcp-server)* |
