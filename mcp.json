@@ -162,6 +162,18 @@
         "--stdio"
       ]
     },
+    "verify-mcp-server": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e", "VERIFY_TENANT=<IBM Security Verify Tenant URL>",
+        "-e", "API_CLIENT_ID=<OAuth API Client ID>",
+        "-e", "API_CLIENT_SECRET=<OAuth API Client Secret>",
+        "ghcr.io/ibm/verify-mcp-server:latest"
+      ]
+    },
     "vault-mcp-server": {
       "command": "docker",
       "args": [
