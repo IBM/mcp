@@ -144,8 +144,7 @@
         "-e", "VERIFY_TENANT=<IBM Security Verify Tenant URL>",
         "-e", "API_CLIENT_ID=<OAuth API Client ID>",
         "-e", "API_CLIENT_SECRET=<OAuth API Client Secret>",
-        "ghcr.io/ibm/verify-mcp-server:latest",
-        "--stdio"
+        "ghcr.io/ibm/verify-mcp-server:latest"
       ]
     },
     "qradar-mcp-server": {
