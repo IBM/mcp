@@ -135,62 +135,6 @@
         "hashicorp/consul-mcp-server"
       ]
     },
-    "gdp-mcp-server": {
-      "command": "docker",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "-e", "GDP_HOST=<Guardium Appliance Hostname>",
-        "-e", "GDP_PORT=<Guardium REST API Port>",
-        "-e", "GDP_CLIENT_ID=<OAuth Client ID>",
-        "-e", "GDP_CLIENT_SECRET=<OAuth Client Secret>",
-        "-e", "GDP_USERNAME=<Guardium Username>",
-        "-e", "GDP_PASSWORD=<Guardium Password>",
-        "-e", "GDP_VERIFY_SSL=false",
-        "ghcr.io/ibm/gdp-mcp-server:latest",
-        "--stdio"
-      ]
-    },
-    "qradar-mcp-server": {
-      "command": "docker",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "-e", "QRADAR_HOST=<QRadar Console URL>",
-        "-e", "QRADAR_API_TOKEN=<QRadar API Token>",
-        "-e", "QRADAR_VERIFY_SSL=false",
-        "ghcr.io/ibm/qradar-mcp-server:latest",
-        "--stdio"
-      ]
-    },
-    "gcm-mcp-server": {
-      "command": "docker",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "-e", "GCM_HOST=<GCM Server IP>",
-        "-e", "GCM_USERNAME=<GCM Username>",
-        "-e", "GCM_PASSWORD=<GCM Password>",
-        "-e", "GCM_CLIENT_SECRET=<OIDC Client Secret>",
-        "ghcr.io/ibm/gcm-mcp-server:latest",
-        "--stdio"
-      ]
-    },
-    "verify-mcp-server": {
-      "command": "docker",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "-e", "VERIFY_TENANT=<IBM Security Verify Tenant URL>",
-        "-e", "API_CLIENT_ID=<OAuth API Client ID>",
-        "-e", "API_CLIENT_SECRET=<OAuth API Client Secret>",
-        "ghcr.io/ibm/verify-mcp-server:latest"
-      ]
-    },
     "vault-mcp-server": {
       "command": "docker",
       "args": [
