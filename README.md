@@ -102,7 +102,7 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 
 ## MCP Clients
 
-We recommend using [Langflow](https://github.com/langflow-ai/langflow) or your IDE of choice as MCP client.
+Any client that supports the MCP protocol works with these servers. Supported clients include [IBM Bob](https://bob.ibm.com/), VS Code (with MCP extension), Claude Desktop, Cursor, and other MCP-compatible AI applications.
 
 ## 💬 Community
 
@@ -124,32 +124,14 @@ If you find these IBM MCP servers useful please consider starring the repository
 
 ## FAQ
 
-### General
-
-**What is MCP?**
-MCP (Model Context Protocol) is an open protocol that standardizes how AI applications connect to external data sources and tools. It provides a universal interface for AI models to interact with APIs, databases, and services.
-
-**Why use IBM MCP Servers?**
-IBM MCP Servers provide production-ready, enterprise-grade MCP server implementations for IBM services including Cloud Object Storage, Watson Discovery, and more. They follow security best practices and include proper input validation.
-
-### Getting Started
-
 **How do I install an MCP server?**
 Each MCP server in this collection has its own installation instructions. Most can be installed via npm, uvx, or Docker. See the individual server README for details.
-
-**Which MCP clients are compatible?**
-Any client that supports the MCP protocol works with these servers. Supported clients include VS Code (with MCP extension), Claude Desktop, Cursor, and other MCP-compatible AI applications.
-
-**Do I need IBM Cloud credentials?**
-It depends on the server. Servers that connect to IBM Cloud services (like Cloud Object Storage) require IBM Cloud credentials. Local servers may not need any credentials.
-
-### Configuration
 
 **How do I configure MCP servers in my client?**
 Add the server configuration to your client's `mcp.json` file. Each server README includes the exact configuration snippet. For VS Code, you can use the one-click install button if available.
 
 **How do I manage API keys and credentials?**
-Store credentials as environment variables or in a `.env` file. Never commit credentials to version control. Each server README specifies the required environment variables.
+MCP servers in this repository are either local or remote. When using local MCP servers store credentials as environment variables or in a `.env` file. Never commit credentials to version control. Each server README specifies the required environment variables.
 
 **Can I run multiple MCP servers simultaneously?**
 Yes. Each MCP server runs as a separate process. Configure each server in your client's MCP configuration file with unique names.
