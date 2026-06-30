@@ -158,6 +158,13 @@
         "-e", "HCP_CLIENT_SECRET=<HCP Service Principal Client Secret>",
         "hashicorp/vault-radar-mcp-server"
       ]
+    },
+    "remote-pa-mcp-server-by-apiKeyBasic": {
+      "type": "streamable-http",
+      "url": "https://<PA_HOST>/api/<TENANT_ID>/v0/agentic-ai/ibm-pa-tools/mcp",
+      "headers": {
+        "Authorization": "Basic <mybase64ecoded(apikey:myapikeyvalue)>"
+      }
     }
   }
 }
