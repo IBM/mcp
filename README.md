@@ -63,6 +63,7 @@ MCP is an open-source protocol designed to enable AI models to securely interact
 |---|---|---|
 | [IBM Instana MCP Server](https://github.com/instana/mcp-instana) | This MCP server provides tools to list and inspect IBM Instana resources, including applications, infrastructure resources etc. | *see link for instructions* |
 | [IBM Storage Insights MCP Server](https://github.com/IBM/ibm-storageinsights-mcpserver) | Leverage key IBM Storage Insights monitoring capabilities via an MCP interface. | *see link for instructions* |
+| [IBM Concert MCP Server](https://github.com/riminator/ibm-concert-mcp) | Autonomous workflow health monitoring, incident diagnosis, auto-remediation, CVE triage, and Slack alerting for IBM Concert via an MCP interface. | *see link for instructions* |
 
 #### 📡 Networking
 
