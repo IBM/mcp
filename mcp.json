@@ -15,19 +15,25 @@
       }
     },
     "carbon-mcp": {
-        "type": "streamable-http",
-        "url": "https://mcp.carbondesignsystem.com/mcp",
-        "disabled": false,
-        "timeout": 600,
-        "headers": {
-          "Authorization": "Bearer <TOKEN>",
-          "X-MCP-Session": "<opaque-session-id>"
-        },
-      "alwaysAllow": ["docs_search", "code_search"]
+      "type": "streamable-http",
+      "url": "https://mcp.carbondesignsystem.com/mcp",
+      "disabled": false,
+      "timeout": 600,
+      "headers": {
+        "Authorization": "Bearer <TOKEN>",
+        "X-MCP-Session": "<opaque-session-id>"
+      },
+      "alwaysAllow": [
+        "docs_search",
+        "code_search"
+      ]
     },
     "ibm-decision-intelligence-mcp-server": {
       "command": "npx",
-      "args": ["-y", "di-mcp-server"],
+      "args": [
+        "-y",
+        "di-mcp-server"
+      ],
       "env": {
         "APIKEY": "<APIKEY>",
         "URL": "https://<TENANT_NAME>.decision-prod-us-south.decision.saas.ibm.com/ads/runtime/api/v1"
@@ -57,7 +63,10 @@
     },
     "astra-db-mcp-server": {
       "command": "npx",
-      "args": ["-y", "@datastax/astra-db-mcp"],
+      "args": [
+        "-y",
+        "@datastax/astra-db-mcp"
+      ],
       "env": {
         "ASTRA_DB_APPLICATION_TOKEN": "YOUR_ASTRA_DB_TOKEN",
         "ASTRA_DB_API_ENDPOINT": "YOUR_ASTRA_DB_ENDPOINT"
@@ -65,12 +74,19 @@
     },
     "docling-mcp-server": {
       "command": "uvx",
-      "args": ["--from=docling-mcp", "docling-mcp-server"]
+      "args": [
+        "--from=docling-mcp",
+        "docling-mcp-server"
+      ]
     },
     "ibm_watsonxdata_local_mcp_server": {
       "type": "stdio",
       "command": "uvx",
-      "args": ["ibm-watsonxdata-dl-retrieval-mcp-server", "--transport", "stdio"],
+      "args": [
+        "ibm-watsonxdata-dl-retrieval-mcp-server",
+        "--transport",
+        "stdio"
+      ],
       "env": {
         "WATSONX_DATA_API_KEY": "YOUR_API_KEY",
         "WATSONX_DATA_RETRIEVAL_ENDPOINT": "YOUR_RETRIVAL_ENDPOINT",
@@ -102,7 +118,10 @@
     "ibmcloud-vpc-mcp-server": {},
     "ibmi-mcp-server": {
       "command": "npx",
-      "args": ["-y", "@ibm/ibmi-mcp-server@latest"],
+      "args": [
+        "-y",
+        "@ibm/ibmi-mcp-server@latest"
+      ],
       "env": {
         "TOOLS_YAML_PATH": "/path/to/your/tools.yaml",
         "DB2i_HOST": "your-ibmi-host.com",
@@ -117,8 +136,10 @@
         "run",
         "-i",
         "--rm",
-        "-e", "TFE_ADDRESS=<HCP Terraform or TFE Address>",
-        "-e", "TFE_TOKEN=<HCP Terraform or TFE Token>",
+        "-e",
+        "TFE_ADDRESS=<HCP Terraform or TFE Address>",
+        "-e",
+        "TFE_TOKEN=<HCP Terraform or TFE Token>",
         "hashicorp/terraform-mcp-server"
       ]
     },
@@ -130,8 +151,10 @@
         "run",
         "--rm",
         "-i",
-        "-e", "CONSUL_HTTP_ADDR=<Consul HTTP Address>",
-        "-e", "CONSUL_HTTP_TOKEN=<Consul HTTP Token>",
+        "-e",
+        "CONSUL_HTTP_ADDR=<Consul HTTP Address>",
+        "-e",
+        "CONSUL_HTTP_TOKEN=<Consul HTTP Token>",
         "hashicorp/consul-mcp-server"
       ]
     },
@@ -141,9 +164,12 @@
         "run",
         "--rm",
         "-i",
-        "-e", "VAULT_ADDR=<Vault Address>",
-        "-e", "VAULT_TOKEN=<Vault Token>",
-        "-e", "VAULT_NAMESPACE=<Vault Namespace>",
+        "-e",
+        "VAULT_ADDR=<Vault Address>",
+        "-e",
+        "VAULT_TOKEN=<Vault Token>",
+        "-e",
+        "VAULT_NAMESPACE=<Vault Namespace>",
         "hashicorp/vault-mcp-server"
       ]
     },
@@ -153,11 +179,29 @@
         "run",
         "--rm",
         "-i",
-        "-e", "HCP_PROJECT_ID=<HCP Project ID>",
-        "-e", "HCP_CLIENT_ID=<HCP Service Principal Client ID>",
-        "-e", "HCP_CLIENT_SECRET=<HCP Service Principal Client Secret>",
+        "-e",
+        "HCP_PROJECT_ID=<HCP Project ID>",
+        "-e",
+        "HCP_CLIENT_ID=<HCP Service Principal Client ID>",
+        "-e",
+        "HCP_CLIENT_SECRET=<HCP Service Principal Client Secret>",
         "hashicorp/vault-radar-mcp-server"
       ]
+    },
+    "concert-workflow-monitor": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "concert-workflow-monitor"
+      ],
+      "env": {
+        "CONCERT_API_KEY": "YOUR_CONCERT_API_KEY",
+        "SLACK_WEBHOOK_URL": "YOUR_SLACK_WEBHOOK_URL",
+        "CONCERT_BASE_URL": "YOUR_CONCERT_WORKFLOWS_GATEWAY_URL",
+        "CONCERT_REST_BASE_URL": "YOUR_CONCERT_HOST_URL",
+        "CONCERT_INSTANCE_ID": "YOUR_CONCERT_INSTANCE_UUID",
+        "MCP_TRANSPORT": "stdio"
+      }
     }
   }
 }
